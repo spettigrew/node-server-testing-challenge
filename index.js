@@ -1,5 +1,5 @@
-const express = require("express")
-const server = express()
+// const express = require("express")
+// const server = express()
 
 const server = require("./server")
 
@@ -11,3 +11,5 @@ if(!module.parent) {
     console.log(`Listening on port${PORT}...`)
     })
 }
+
+// With server exported, do I need a separate server file?
