@@ -1,40 +1,27 @@
 // Update with your config settings.
 
-
-// ./knexfile.js
+const sqlite = {
+  client: "sqlite3",
+  useNullAsDefault: true,
+  migrations: {
+    directory: "./data/migrations",
+  },
+  seeds: {
+    directory: "./data/seeds",
+  },
+}
 
 module.exports = {
-  development: {
-    client: 'sqlite3',
+  dev: {
+    ...sqlite,
     connection: {
-      filename: './data/user.db3',
-    },
-    useNullAsDefault: true,
-    migrations: {
-      directory: './data/migrations',
-    },
-    seeds: {
-      directory: './data/seeds',
-    },
-    // needed when using foreign keys
-    pool: {
-      afterCreate: (conn, done) => {
-        // runs after a connection is made to the sqlite engine
-        conn.run("PRAGMA foreign_keys = ON", done); // turn on FK enforcement
-      },
+      filename: "./data/dev.db3",
     },
   },
-  testing: {
-    client: 'sqlite3',
+  test: {
+    ...sqlite,
     connection: {
-      filename: './data/test.db3',
-    },
-    useNullAsDefault: true,
-    migrations: {
-      directory: './data/migrations',
-    },
-    seeds: {
-      directory: './data/seeds',
+      filename: "./data/test.db3",
     },
   },
-};
+}
