@@ -10,6 +10,7 @@ describe("critters model", () => {
     test("list", async () => {
         const res = await critterModel.list()
         expect(res).toHaveLength(6)
+        // expect(res.length).toBeGreaterThan(0) works as well
     })
 })
 
