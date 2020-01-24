@@ -14,7 +14,9 @@
 // }
 
 // function remove(id) {
-//     return null
+//     return db ("user")
+//        .where({ id })
+//        .del()
 // }
 
 // function getAll() {
@@ -22,7 +24,9 @@
 // }
 
 // function findById(id) {
-//     return null
+//     return db("users")
+        // .where({ id })
+        // .first()
 // }
 
 // module.exports = {
