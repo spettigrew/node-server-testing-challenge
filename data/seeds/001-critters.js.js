@@ -4,11 +4,11 @@ exports.seed = async (knex) => {
   await knex("critters").truncate()
     
       await knex("critters").insert([
-        { id: 1, name: "George Mouse" },
-        { id: 2, name: "Lily Mouse" },
-        { id: 3, name: "Sophie Mouse" },
-        { id: 4, name: "Winston Mouse" },
-        { id: 5, name: "Hattie Frog" },
-        { id: 6, name: "Owen Snake" }
+        { name: "George Mouse" },
+        { name: "Lily Mouse" },
+        { name: "Sophie Mouse" },
+        { name: "Winston Mouse" },
+        { name: "Hattie Frog" },
+        { name: "Owen Snake" }
       ])
 }
