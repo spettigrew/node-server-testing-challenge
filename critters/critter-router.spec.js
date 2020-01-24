@@ -30,7 +30,7 @@ test("create critter route", async () => {
     .send({ name: "Mrs. Wise" })
 
     expect(res.status).toBe(201)
-    expect(res.type).toBBe("application/json")
+    expect(res.type).toBe("application/json")
     expect(res.body).toEqual({ id: 7, name: "Mrs. Wise" })
 })
 
