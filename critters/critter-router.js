@@ -1,14 +1,9 @@
 const express = require("express")
 const crittersModel = require("../critters/critter-model")
 
-const server = express()
+const router = express.Router()
 
-
-server.get("/", (req, res) => {
-    return res.status(200).json({ message: "Welcome to Pine Needle Grove!", })
-})
-
-server.get("/critters", async (req, res, next) => {
+router.get("/", async (req, res, next) => {
     try {
         const critters = await crittersModel.list()
         return res.status(200).json(critters)
@@ -18,7 +13,7 @@ server.get("/critters", async (req, res, next) => {
     }
 })
 
-server.post("/critters", async (req, res, next) => {
+router.post("/", async (req, res, next) => {
     try {
         const critter = await crittersModel.insert(req.body)
         return res.status(201).json(critter)
@@ -28,4 +23,4 @@ server.post("/critters", async (req, res, next) => {
     }
 })
 
-module.exports = server
+module.exports = router
