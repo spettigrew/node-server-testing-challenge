@@ -3,11 +3,11 @@
 
 const server = require("./server")
 
-const port = process.env.PORT || 4000
+const PORT = process.env.PORT || 4000
 
 
 if(!module.parent) {
-  server.listen(port, () => {
+  server.listen(PORT, () => {
     console.log(`Listening on port${PORT}...`)
     })
 }
