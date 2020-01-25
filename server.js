@@ -8,11 +8,11 @@ server.use(express.json())
 
 require("dotenv").config()
 
-server.use("/critters", critterRouter)
+server.use("/api/critters", critterRouter)
 
-server.get('/', (req, res) => {
-    return res.status(200).json({ api: 'running' });
-});
+server.get("/", (req, res) => {
+    return res.status(200).json({ message: "Welcome to Pine Needle Grove!", })
+})
 
 server.use((err, req, res, next) => {
     console.log("Error:", err)
