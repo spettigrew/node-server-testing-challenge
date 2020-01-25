@@ -1,5 +1,5 @@
 const supertest = require("supertest")
-const server = require('../critters/critter-router')
+const server = require("../server")
 const db = require("../data/db.config")
 
 beforeEach(async () => {
@@ -16,7 +16,7 @@ test("welcome route", async () => {
 })
 
 test("get critter list", async () => {
-    const res = await supertest(server).get("/critters")
+    const res = await supertest(server).get("/api/critters")
     expect (res.status).toBe(200)
     expect(res.type).toBe("application/json")
     expect(res.body.length).toBeGreaterThan(0)
@@ -26,7 +26,7 @@ test("get critter list", async () => {
 
 test("create critter route", async () => {
     const res = await supertest(server)
-    .post("/critters")
+        .post("/api/critters")
     .send({ name: "Mrs. Wise" })
 
     expect(res.status).toBe(201)
