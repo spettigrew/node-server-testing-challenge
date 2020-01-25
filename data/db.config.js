@@ -6,7 +6,7 @@ const config = require("../knexfile");
 
 // if the environment variable is not set, default to 'development'. dev = development
 // this variable is only set when running the "test" npm script using npm run test
-const environment = process.env.NODE_ENV || "dev";
+const environment = process.env.NODE_ENV || "development";
 
 // the value of dbEnv will be either 'development' or 'testing'
 // we pass it within brackets to select the corresponding configuration. Env = environment
